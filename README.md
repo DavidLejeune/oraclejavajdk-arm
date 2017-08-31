@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # This will install a Bamboo compatible Java JDK on a Rapsberry Pi 3
 
 # Why ?
@@ -23,34 +21,3 @@
     #   sudo update-alternatives --config java
 
 # Problem : adding debian repository on arm is a big no-no
-
-clear
-
-echo '      ____              __        '
-echo '     / __ \   ____ _   / /      ___ '
-echo '    / / / /  / __ `/  / /      / _ \'
-echo '   / /_/ /  / /_/ /  / /___   /  __/'
-echo '  /_____/   \__,_/  /_____/   \___/ '
-echo ''
-echo '    +-+-+-+-+-+-+-+-+-+-+ +-+-+-+'
-echo '    |L|i|n|u|x|s|h|e|l|l| |C|L|I|'
-echo '    +-+-+-+-+-+-+-+-+-+-+ +-+-+-+'
-echo ''
-echo '  >> Author : David Lejeune'
-echo "  >> Created : 31/08/2017"
-echo ''
-echo ' ###################################'
-echo ' #  INSTALLING COMPATIBLE JDK FOR  #'
-echo ' #   BAMBOO REMOTE AGENT ON PI 3   #'
-echo ' ###################################'
-echo ''
-
-echo "Creating the java directory"
-sudo mkdir /usr/java
-
-echo "Installing Oracle Java JDK 8"
-sudo apt-get install oracle-java8-jdk
-
-echo "Ensuring the version of java used by default is the latest (in case there are multiple versions present on the server)"
-sudo update-alternatives --config javac
-sudo update-alternatives --config java
