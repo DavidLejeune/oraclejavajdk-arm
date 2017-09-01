@@ -23,6 +23,7 @@
     #   sudo update-alternatives --config java
 
 # Problem : adding debian repository on arm is a big no-no
+# Proposed solution : http://www.rpiblog.com/2014/03/installing-oracle-jdk-8-on-raspberry-pi.html
 
 clear
 
@@ -45,12 +46,18 @@ echo ' #   BAMBOO REMOTE AGENT ON PI 3   #'
 echo ' ###################################'
 echo ''
 
-echo "Creating the java directory"
-sudo mkdir /usr/java
+echo ''
+echo "Extract jdk-8-linux-arm-vfp-hflt.tar.gz to /opt directory"
+sudo tar zxvf jdk-8u144-linux-arm32-vfp-hflt.tar.gz -C /opt
 
-echo "Installing Oracle Java JDK 8"
-sudo apt-get install oracle-java8-jdk
-
-echo "Ensuring the version of java used by default is the latest (in case there are multiple versions present on the server)"
+echo ''
+echo "Set default java and javac to the new installed jdk8."
+sudo update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_144/bin/javac 1
+sudo update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_144/bin/java 1
 sudo update-alternatives --config javac
 sudo update-alternatives --config java
+
+echo ''
+echo "Verify java and javac version"
+java -version
+javac -version
