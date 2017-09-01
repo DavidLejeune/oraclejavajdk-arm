@@ -21,3 +21,4 @@
     #   sudo update-alternatives --config java
 
 # Problem : adding debian repository on arm is a big no-no
+# Proposed solution : http://www.rpiblog.com/2014/03/installing-oracle-jdk-8-on-raspberry-pi.html
