@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+(clear && toilet -f slant -F gay DaLe && toilet -f digital -F gay  Linux CLI && echo "$(date '+%D %T' | toilet -f term -F border --gay)"&& fortune )
+echo ''
+echo ' ###################################' | toilet -f term -F border --gay
+echo ' #    REMOTE AGENT LAUNCH LINUX    #' | toilet -f term -F border --gay
+echo ' ###################################' | toilet -f term -F border --gay
+echo ''
+
+
+java -Dbamboo.Home=/home/pi/bamboo-agent-home -jar atlassian-bamboo-agent-installer-6.0.2.jar http://84.199.251.203/agentServer/
+#java -jar atlassian-bamboo-agent-installer-6.0.2.jar http://84.199.251.203/agentServer/
